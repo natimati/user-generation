@@ -48,7 +48,7 @@ interface Props {
 };
 
 function UserTable(props: Props) {
-  const { isLoading, error, data, refetch, fetchNextPage } = useInfiniteQuery<UsersResponse>(['users', props.seed, props.region],
+  const { isLoading, data, refetch, fetchNextPage } = useInfiniteQuery<UsersResponse>(['users', props.seed, props.region],
     ({ pageParam }) => getFakeUsers(props.seed, props.region, pageParam + 1), {
     enabled: false,
     refetchOnWindowFocus: false,
